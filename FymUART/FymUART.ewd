@@ -73,7 +73,7 @@
         </option>
         <option>
           <name>DynDriver</name>
-          <state>SIM_ID</state>
+          <state>CHIPCON_ID</state>
         </option>
         <option>
           <name>Debugger Extra Options Check</name>
@@ -117,7 +117,7 @@
         </option>
         <option>
           <name>DdfFile master</name>
-          <state>$TOOLKIT_DIR$\config\devices\_generic\io8052.ddf</state>
+          <state>$TOOLKIT_DIR$\config\devices\Texas Instruments\ioCC2530F256.ddf</state>
         </option>
         <option>
           <name>OCImagesOffset1</name>
@@ -241,7 +241,7 @@
         </option>
         <option>
           <name>ChipconFlashLockInfo</name>
-          <state>no description</state>
+          <state>&lt;page size info. missing></state>
         </option>
         <option>
           <name>ChipconBootLock</name>

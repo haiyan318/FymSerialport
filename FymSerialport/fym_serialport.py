@@ -6,9 +6,6 @@ fym_serialport.py —— 第4-5周 任务2 上位机（XXXSerialport）
   * 自动枚举/刷新本机串口，串口号不写死
   * 选择串口 + 波特率(默认19200，与固件一致)后打开
   * 点击“开灯/关灯”按钮发送 '1'/'0'，异步接收开发板回传并显示
-
-运行（docgui 环境）：
-    D:\\apps\\anaconda3\\envs\\docgui\\python.exe fym_serialport.py
 """
 import os
 import sys
@@ -22,6 +19,14 @@ from PyQt5.QtCore import QThread, pyqtSignal
 
 import fym_protocol as P
 from fym_client import LedSerialClient, list_ports
+
+# ----------------------------------------------------------------------
+# 界面字体：仅调整字号并统一应用到整个程序（不改动任何布局结构）
+#   原程序未设置字体，使用系统默认字号（Windows 下约 9pt，其它平台可能为 12pt）。
+#   UI_FONT_POINT_SIZE 为期望字号，数值可按需修改；实际应用时会保证
+#   相对当前默认字号确实变大（见 apply_ui_font）。
+# ----------------------------------------------------------------------
+UI_FONT_POINT_SIZE = 14
 
 
 class SerialReadThread(QThread):
@@ -52,7 +57,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("FymSerialport —— CC2530 灯控上位机（第4-5周 任务2）")
-        self.resize(560, 460)
+        self.resize(560, 480)
         self.client = LedSerialClient()
         self.read_thread = None
         self._build_ui()
@@ -130,8 +135,9 @@ class MainWindow(QMainWindow):
         port = self.combo_port.currentText().strip()
         baud = int(self.combo_baud.currentText())
         try:
-            used = self.client.open(port or None)
+            # 注意：波特率必须在 open() 之前设置，pyserial 是在打开时生效的
             self.client.baudrate = baud
+            used = self.client.open(port or None)
             self.btn_open.setText("关闭串口")
             self.log(f"已打开串口 {used} @ {baud} 8-{P.PARITY}-{P.STOPBITS}")
             self.read_thread = SerialReadThread(self.client)
@@ -170,8 +176,25 @@ class MainWindow(QMainWindow):
         event.accept()
 
 
+def apply_ui_font(app):
+    """把界面字号统一调大：沿用当前字体族与其它属性，仅修改字号。
+
+    实际字号 = max(UI_FONT_POINT_SIZE, 当前默认字号 + 2)，
+    以保证在任何平台/DPI 下都确实比默认更大。
+    """
+    font = app.font()
+    base = font.pointSize()
+    size = UI_FONT_POINT_SIZE
+    if base > 0:
+        size = max(size, base + 2)
+    font.setPointSize(size)
+    app.setFont(font)
+    return app.font()
+
+
 def main():
     app = QApplication(sys.argv)
+    apply_ui_font(app)          # 在建窗口前设置，所有控件随之放大
     win = MainWindow()
     win.show()
     sys.exit(app.exec_())

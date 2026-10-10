@@ -17,15 +17,15 @@
         <debug>1</debug>
         <option>
           <name>DerivativeDescriptionFile</name>
-          <state>$TOOLKIT_DIR$\config\devices\</state>
+          <state>$TOOLKIT_DIR$\config\devices\Texas Instruments\CC2530F256.i51</state>
         </option>
         <option>
           <name>Previous Derivative File</name>
-          <state>$TOOLKIT_DIR$\config\devices\</state>
+          <state>$TOOLKIT_DIR$\config\devices\Texas Instruments\CC2530F256.i51</state>
         </option>
         <option>
           <name>Showed Derivative</name>
-          <state>No device selected</state>
+          <state>CC2530F256</state>
         </option>
         <option>
           <name>CPU Core</name>
@@ -40,22 +40,22 @@
         <option>
           <name>Code Memory Model</name>
           <version>1</version>
-          <state>1</state>
+          <state>2</state>
         </option>
         <option>
           <name>Code Memory Model slave</name>
           <version>1</version>
-          <state>1</state>
+          <state>2</state>
         </option>
         <option>
           <name>Data Memory Model</name>
           <version>0</version>
-          <state>1</state>
+          <state>2</state>
         </option>
         <option>
           <name>Data Memory Model slave</name>
           <version>0</version>
-          <state>1</state>
+          <state>2</state>
         </option>
         <option>
           <name>Use extended stack</name>
@@ -72,7 +72,7 @@
         <option>
           <name>Calling convention</name>
           <version>0</version>
-          <state>2</state>
+          <state>4</state>
         </option>
         <option>
           <name>Workseg Size</name>
@@ -114,7 +114,7 @@
         </option>
         <option>
           <name>CodeBankReg</name>
-          <state>0xC7</state>
+          <state>0x9F</state>
         </option>
         <option>
           <name>CodeBankStart</name>
@@ -142,7 +142,7 @@
         </option>
         <option>
           <name>RTDescription</name>
-          <state></state>
+          <state>Use the legacy C runtime library.</state>
         </option>
         <option>
           <name>RTConfigPath</name>
@@ -150,25 +150,25 @@
         </option>
         <option>
           <name>RTLibraryPath</name>
-          <state>xxx.r51</state>
+          <state>$TOOLKIT_DIR$\LIB\CLIB\cl-pli-nsid-1e16x01.r51</state>
         </option>
         <option>
           <name>Input variant</name>
           <version>0</version>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>Input description</name>
-          <state></state>
+          <state>Full formatting.</state>
         </option>
         <option>
           <name>Output variant</name>
           <version>0</version>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>Output description</name>
-          <state></state>
+          <state>Full formatting.</state>
         </option>
         <option>
           <name>GeneralEnableMisra</name>
@@ -188,7 +188,7 @@
         </option>
         <option>
           <name>General Xdata Stack Size</name>
-          <state>0xEFF</state>
+          <state>0x1FF</state>
         </option>
         <option>
           <name>General Ext Stack Size</name>
@@ -212,7 +212,7 @@
         </option>
         <option>
           <name>CodeBankRegMask</name>
-          <state>0x30</state>
+          <state>0xFF</state>
         </option>
         <option>
           <name>GeneralMisraRules98</name>
@@ -221,7 +221,7 @@
         </option>
         <option>
           <name>PDATA 8-15 register address</name>
-          <state>0xA0</state>
+          <state>0x93</state>
         </option>
         <option>
           <name>PDATA 16-31 register address</name>
@@ -690,7 +690,7 @@
         <debug>1</debug>
         <option>
           <name>XOutOverride</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>OutputFile</name>
@@ -708,7 +708,7 @@
         </option>
         <option>
           <name>SecondaryOutputFile</name>
-          <state></state>
+          <state>(None for the selected format)</state>
         </option>
         <option>
           <name>XDefines</name>
@@ -748,7 +748,7 @@
         </option>
         <option>
           <name>XIncludes</name>
-          <state>###Uninitialized###</state>
+          <state>$TOOLKIT_DIR$\LIB\</state>
         </option>
         <option>
           <name>ModuleStatus</name>
@@ -756,11 +756,11 @@
         </option>
         <option>
           <name>XclOverride</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>XclFile</name>
-          <state>lnk0t.xcl</state>
+          <state>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_cc2530F256_banked.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -868,7 +868,7 @@
         </option>
         <option>
           <name>xcProgramEntryLabel</name>
-          <state></state>
+          <state>__program_start</state>
         </option>
         <option>
           <name>DebugInformation</name>
@@ -884,24 +884,24 @@
         </option>
         <option>
           <name>AllowExtraOutput</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>GenerateExtraOutput</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>XExtraOutOverride</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>ExtraOutputFile</name>
-          <state></state>
+          <state>FymUART.hex</state>
         </option>
         <option>
           <name>ExtraOutputFormat</name>
           <version>11</version>
-          <state>60</state>
+          <state>23</state>
         </option>
         <option>
           <name>ExtraFormatVariant</name>

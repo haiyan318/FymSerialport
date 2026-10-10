@@ -20,12 +20,7 @@ from PyQt5.QtCore import QThread, pyqtSignal
 import fym_protocol as P
 from fym_client import LedSerialClient, list_ports
 
-# ----------------------------------------------------------------------
-# 界面字体：仅调整字号并统一应用到整个程序（不改动任何布局结构）
-#   原程序未设置字体，使用系统默认字号（Windows 下约 9pt，其它平台可能为 12pt）。
-#   UI_FONT_POINT_SIZE 为期望字号，数值可按需修改；实际应用时会保证
-#   相对当前默认字号确实变大（见 apply_ui_font）。
-# ----------------------------------------------------------------------
+# 界面字体字号
 UI_FONT_POINT_SIZE = 14
 
 
@@ -178,9 +173,6 @@ class MainWindow(QMainWindow):
 
 def apply_ui_font(app):
     """把界面字号统一调大：沿用当前字体族与其它属性，仅修改字号。
-
-    实际字号 = max(UI_FONT_POINT_SIZE, 当前默认字号 + 2)，
-    以保证在任何平台/DPI 下都确实比默认更大。
     """
     font = app.font()
     base = font.pointSize()

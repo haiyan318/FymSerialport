@@ -1,7 +1,8 @@
 [DebugChecksum]
 Checksum=-1959450805
 [DisAssemblyWindow]
-NumStates=_ 0
+NumStates=_ 1
+State 1=_ 1
 [InstructionProfiling]
 Enabled=_ 0
 [CodeCoverage]
@@ -16,13 +17,6 @@ UseTrigger=1
 TriggerName=main
 LimitSize=0
 ByteLimit=50
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [CallStackLog]
 Enabled=0
 [DriverProfiling]
@@ -37,8 +31,6 @@ GraphEnabled=0
 ShowTimeLog=1
 ShowTimeSum=1
 SumSortOrder=0
-[Breakpoints]
-Count=0
 [Interrupts]
 Enabled=1
 [MemoryMap]
@@ -48,9 +40,21 @@ UseAuto=0
 TypeViolation=1
 UnspecRange=1
 ActionState=1
-[Aliases]
-Count=0
-SuppressDialog=0
 [TraceHelper]
 Enabled=0
 ShowSource=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Count=0
+[ChipconEmu]
+Stop timers on halt=0
+Leave target running=1
+[Aliases]
+Count=0
+SuppressDialog=0

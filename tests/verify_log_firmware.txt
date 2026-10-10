@@ -1,0 +1,25 @@
+==== FymUART 离机逻辑自测 ====
+  [PASS] InitLed 后 YLED 初始为灭(P1_0=1)
+  [PASS] InitLed 后 BLED 初始为灭(P1_1=1)
+  [PASS] UART0 已进入 UART 方式(U0CSR bit7=1)
+  [PASS] UART0 允许接收(U0CSR bit6=1)
+  [PASS] 波特率寄存器 U0GCR=9 / U0BAUD=59 (19200)
+  [PASS] 使能总中断+UART0接收中断 IEN0 bit7/bit2 = 1,1
+    -> 收到'1'  回传="led on
+" YLED=0 BLED=1
+  [PASS] '1' 使 YLED 点亮(P1_0=0)
+  [PASS] '1' 回传 "led on\r\n"
+    -> 收到'0'  回传="led off
+" YLED=1
+  [PASS] '0' 使 YLED 熄灭(P1_0=1)
+  [PASS] '0' 回传 "led off\r\n"
+  [PASS] '2' 使 BLED 点亮(P1_1=0)
+  [PASS] '2' 回传 "led2 on\r\n"
+  [PASS] '3' 使 BLED 熄灭(P1_1=1)
+  [PASS] '3' 回传 "led2 off\r\n"
+  [PASS] 无换行的非指令字符不成帧(不回传)
+  [PASS] 整行非指令 "x\n" 回传 "unknown\r\n"
+  [PASS] 整行 "1\r\n" 也能正确开灯并回传
+  [PASS] 连续 '1''0' 后灯灭且回传=led off
+
+==== 结果: 18/18 通过 ====

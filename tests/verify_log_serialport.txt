@@ -1,0 +1,30 @@
+==== FymSerialport 上位机自测 ====
+
+A. 协议一致性
+  [PASS] 波特率 = 19200 (与固件一致)
+  [PASS] 数据位/停止位/校验 = 8/1/N
+  [PASS] '1' 期望回传 'led on'
+  [PASS] '0' 期望回传 'led off'
+  [PASS] normalize_reply 去换行
+B. 客户端收发回路（模拟板卡）
+  [PASS] 打开串口返回端口名
+  [PASS] 串口 is_open
+  [PASS] 打开时参数正确(baud=19200,8N1)
+  [PASS] 开灯指令回传 'led on'
+  [PASS] 关灯指令回传 'led off'
+  [PASS] 开灯2 回传 'led2 on'
+  [PASS] 关灯2 回传 'led2 off'
+  [PASS] 非法指令回传 'unknown'
+  [PASS] 发送日志记录 b'1'/b'0' 等原样字节
+  [PASS] 关闭后 is_open 为 False
+C. 串口枚举
+  [PASS] list_ports 返回列表
+     当前本机串口：(无)
+D. 界面构建（offscreen）
+  [PASS] 主窗口构建成功
+  [PASS] 默认波特率为 19200
+  [PASS] 存在 开灯/关灯 按钮
+  [PASS] 未打开串口时点击按钮给出提示且不崩溃
+  [PASS] 打开串口后点击“开灯”实际发出 b'1'
+
+==== 结果: 21/21 通过 ====

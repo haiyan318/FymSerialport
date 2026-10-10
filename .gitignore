@@ -1,0 +1,82 @@
+# =========================
+# Python / PyQt5 project
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+*.venv/
+
+# Test / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage/
+htmlcov/
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+*.spec
+
+# Qt / PyQt related temporary files
+*.ui.autosave
+*.qmlc
+*.jsc
+*.bak
+
+# =========================
+# VS Code / IDE
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# =========================
+# Windows system files
+# =========================
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+ehthumbs.db
+
+# =========================
+# IAR / CC2530 generated files
+# =========================
+# 这些目录通常仅为编译产物，不需要提交到版本库
+**/Debug/
+**/Debug/**
+**/Obj/
+**/Obj/**
+**/List/
+**/List/**
+**/Exe/
+**/Exe/**
+
+# IAR common output artifacts
+*.hex
+*.bin
+*.out
+*.map
+*.d43
+*.r43
+*.s43
+*.pbd
+
+# General logs and temporaries
+*.log
+*.tmp
+*.temp
+
+# Keep project configuration files such as .ewp/.eww/.ewd
+# and source files tracked intentionally.
